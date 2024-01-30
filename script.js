@@ -3,6 +3,19 @@ function generatePassword() {
     var nr_symbols = document.getElementById('symbols').value;
     var nr_numbers = document.getElementById('numbers').value;
 
+    
+    // Validate input values
+    if (nr_letters === '' || nr_symbols === '' || nr_numbers === '') {
+        alert("Please enter values for letters, symbols, and numbers.");
+        return;
+    }
+
+    // Additional validation for numeric values
+    if (isNaN(nr_letters) || isNaN(nr_symbols) || isNaN(nr_numbers) || nr_letters < 0 || nr_symbols < 0 || nr_numbers < 0) {
+        alert("Please enter valid numeric values for letters, symbols, and numbers.");
+        return;
+    }
+    
     var letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var symbols = '!#$%&()*+';
     var numbers = '0123456789';
@@ -46,6 +59,14 @@ function copyText() {
 
     var copiedText = document.getElementById('copiedText');
     copiedText.innerText = "Copied";
+    
+    
+   // Change the color of the copy button
+   var copyButton = document.getElementById('copiedText');
+   copyButton.style.backgroundColor = '#465765'; // You can change the color code as needed
+   copyButton.innerText = "Copied";
+
+    
     // Create a temporary textarea element
     var textarea = document.createElement('textarea');
     textarea.value = textToCopy;
@@ -63,91 +84,4 @@ function copyText() {
     document.body.removeChild(textarea);
 
 }
-
-
-
-
-
-// function myFunction() {
-//     // Get the text field
-//     var copyText = document.getElementById("modalPassword").innerText;
-  
-//     var copiedtextValue = document.getElementById("copiedText");
-//     copiedtextValue.innerText = "copied text"; 
-    
-//     // Alert the copied text
-//   }
-
-
-// var closebtns = document.getElementsByClassName("close");
-// var i;
-
-// for (i = 0; i < closebtns.length; i++) {
-//   closebtns[i].addEventListener("click", function() {
-//     this.parentElement.style.display = 'none';
-//   });
-// }
-
-
-
-// function generatePassword() {
-//     var nr_letters = document.getElementById('letters').value;
-//     var nr_symbols = document.getElementById('symbols').value;
-//     var nr_numbers = document.getElementById('numbers').value;
-
-//     var letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-//     var symbols = '!#$%&()*+';
-//     var numbers = '0123456789';
-
-//     var passwordList = [];
-
-//     for (var i = 0; i < nr_letters; i++) {
-//         passwordList.push(letters.charAt(Math.floor(Math.random() * letters.length)));
-//     }
-
-//     for (var j = 0; j < nr_symbols; j++) {
-//         passwordList.push(symbols.charAt(Math.floor(Math.random() * symbols.length)));
-//     }
-
-//     for (var k = 0; k < nr_numbers; k++) {
-//         passwordList.push(numbers.charAt(Math.floor(Math.random() * numbers.length)));
-//     }
-
-//     passwordList.sort(() => Math.random() - 0.5);
-
-//     var password = passwordList.join('');
-//     document.getElementById('modalPassword').innerText = 'Your password is ' + password;
-//     openModal();
-// }
-
-// function openModal() {
-//     var passwordModal = document.getElementById('passwordModal');
-//     passwordModal.style.display = 'block';
-
-//     // Add a click event listener to the modal overlay for closing
-//     document.addEventListener('click', closeModalOverlay);
-// }
-
-// function closeModal() {
-//     var passwordModal = document.getElementById('passwordModal');
-//     passwordModal.style.display = 'none';
-
-//     // Remove the click event listener when closing the modal
-//     document.removeEventListener('click', closeModalOverlay);
-// }
-
-// function closeModalOverlay(event) {
-//     // Check if the click is outside the modal, then close it
-//     var passwordModal = document.getElementById('passwordModal');
-//     if (!passwordModal.contains(event.target)) {
-//         closeModal();
-//     }
-// }
-
-// // Attach closeModal function to the close button
-// var closeButton = document.querySelector('.close');
-// if (closeButton) {
-//     closeButton.addEventListener('click', closeModal);
-// }
-
 
