@@ -50,10 +50,13 @@ function generatePassword() {
     var password = passwordList.join('');
     document.getElementById('modalPassword').innerText =  password;
     openModal();
+
+
 }
 
 function openModal() {
     document.getElementById('passwordModal').style.display = 'block';
+    
 }
 
 function closeModal() {
@@ -62,7 +65,7 @@ function closeModal() {
 
 }
 
-
+// the copy button function to copy the password from the clipboard.
 
 function copyText() {
     // Get the text from the output element
@@ -106,4 +109,6 @@ function copyText() {
      
 
 }
+
+
 
