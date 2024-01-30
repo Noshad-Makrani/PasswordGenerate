@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iQz2I7L3z+Or/CUJKt9qGwWqqnv6PS5/SFIIJdA2a/1egp5Uup5T5UQb2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="util.css">
+    <link rel="stylesheet" href="hamburgers.min.css">
+    <link rel="stylesheet" href="select2.min.css">
+</head>
+<body>
+   
+    <div class="limiter">
+        
+        <div class="container-login100">
+            
+            <div class="wrap-login100">
+               
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="img-01.png" alt="IMG">
+                </div>
+                
+                <form class="login100-form validate-form">
+                    <span class="login100-form-title" style="text-align: left; font-size: 30px;color: #465765;">
+                        Generate a <br> <span style="color: #7b26ac;">Random Password</span>
+                    </span>
+                    <div class="wrap-input100 validate-input" data-validate="Please Enter a number from 0 to 9">
+                        <input class="input100" type="number" id="letters" placeholder="Enter number of letters" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="number" id="symbols" placeholder="Enter number of symbols" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="number" id="numbers" placeholder="Enter number of numbers" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <button type="button" class="login100-form-btn" onclick="generatePassword()">
+                            Generate Password
+                        </button>
+                    </div>
+                    <!-- Modal -->
+                    
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="passwordModal">
+        <button class="close" onclick="closeModal()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+        </button>
+        <div class="h1-div">
+        <h1 >Your password is: </h1>
+        <h1 id="modalPassword"></h1>
+        <button id="copiedText" class="login100-form-btn" style="width: auto;" onclick="copyText()">Copy</button>
+        </div>
+    </div>
+    
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="popper.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="tilt.jquery.min.js"></script>
+<script src="jquery-3.2.1.min.js"></script>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
