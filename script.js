@@ -6,13 +6,24 @@ function generatePassword() {
     
     // Validate input values
     if (nr_letters === '' || nr_symbols === '' || nr_numbers === '') {
-        alert("Please enter values for letters, symbols, and numbers.");
+        
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Input',
+            text: 'Please enter valid Password Length.'
+        });
+        
         return;
     }
 
     // Additional validation for numeric values
     if (isNaN(nr_letters) || isNaN(nr_symbols) || isNaN(nr_numbers) || nr_letters < 0 || nr_symbols < 0 || nr_numbers < 0) {
-        alert("Please enter valid numeric values for letters, symbols, and numbers.");
+                
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Length',
+            text: 'Please enter a valid Password length'
+        });
         return;
     }
     
