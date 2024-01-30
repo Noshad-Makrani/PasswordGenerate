@@ -79,9 +79,20 @@ function copyText() {
 
     // Execute the copy command
     document.execCommand('copy');
+    
+    
 
     // Remove the textarea from the document
     document.body.removeChild(textarea);
+    
+    Swal.fire({
+        icon: 'success',
+        title: 'Password copied successfully',
+        showConfirmButton: false,
+        timer: 1500
+    });
+  
+     
 
 }
 
